@@ -5,7 +5,7 @@
  define ( 'SYSTEM_PATH', BASE_PATH . SEPARATOR . "system" . SEPARATOR );
  
  # Uncomment line below to enable error reporting 
- # define ( 'DEVELOPMENT_MODE', 'true' );
+ define ( 'DEVELOPMENT_MODE', 'true' );
  
  function setErrorReporting(){
      if( defined('DEVELOPMENT_MODE') && DEVELOPMENT_MODE ) {        
@@ -20,5 +20,7 @@
  }
  
  setErrorReporting();
-
+ 
+ if( isset( $_SERVER['PATH_INFO'] )) $path = $_SERVER['PATH_INFO'];
+ 
  include SYSTEM_PATH . "core" . SEPARATOR . "system.php";
